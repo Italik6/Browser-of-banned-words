@@ -9,7 +9,7 @@ class SearchBar extends Component {
         return (
             <div className="search-bar">
                 <input 
-                    placeholder="Search..."
+                    placeholder="Check if your word can be banned."
                     value={this.state.term}
                     onChange={e => this.onInputChange(e.target.value)}
                 />

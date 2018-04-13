@@ -2,7 +2,6 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar';
-import WordList from './components/word_list';
 import VideoDetail from './components/video_detail';
 const API_KEY = 'AIzaSyA4rzfkCMJXDlSDG4pQU_qCJh6tATTSxRE';
 
@@ -24,21 +23,17 @@ class App extends Component {
         });
     };
 
-    videoSearch(term) {
-        YTSearch({key: API_KEY, term: term}, videos => {
-            this.setState({ 
-                videos: videos,
-                selectedVideo: videos[0]
-            });
-        })
+    wordSearch(term) {
+       console.log(term);
+       console.log(_.includes(this.state.words, term))
     }
 
     render() {
-        const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
+        const wordSearch = _.debounce((term) => { this.wordSearch(term) }, 300);
 
         return (
             <div>
-                <SearchBar onSearchTermChange={videoSearch} />
+                <SearchBar onSearchTermChange={wordSearch} />
                 {/* <VideoDetail video={this.state.selectedVideo} /> */}
                 <h1>Movie List</h1>
              <ul>
