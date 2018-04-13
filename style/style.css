@@ -1,5 +1,5 @@
 .search-bar {
-    margin: 20px 15px;
+    margin: 20px 0;
     text-align: center;
 }
 
@@ -10,10 +10,6 @@
 .loading {
     color: #fff;
     margin-left: 15px;
-}
-
-.list-group {
-    background-color: #D36A48;
 }
 
 .list-group-item {

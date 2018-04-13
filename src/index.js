@@ -2,13 +2,12 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar';
-import keyIndex from 'react-key-index';
 
+import WordList from './components/word_list';
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            term: '',
             words: []
         };
     }
@@ -28,16 +27,17 @@ class App extends Component {
 
     render() {
         const wordSearch = _.debounce((term) => { this.wordSearch(term) }, 300);
-        const words = keyIndex(this.state.words, 1);
-
+        
         return (
             <div>
                 <SearchBar onSearchTermChange={wordSearch} />
-                <ul className="list-group">
+                {/* <ul className="list-group">
                     {words.map(word => {
                         return <li key={word.id} className="list-group-item">{word.value}</li>
                     })}
-                </ul>
+                </ul> */}
+                <WordList
+                    words={this.state.words} />
             </div>
         );
     }
