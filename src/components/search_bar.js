@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { term: '' };
+    }
     
     onInputChange(term) {
         this.setState({term});
         this.props.onSearchTermChange(term);
     }
 
-    constructor(props) {
-        super(props);
-        this.state = { term: '' };
-    }
     render() {
         return (
             <div className="search-bar">
@@ -19,7 +19,7 @@ class SearchBar extends Component {
                     value={this.state.term}
                     onChange={e => this.onInputChange(e.target.value)}
                 />
-                <p>{this.state.term}</p>
+                {/* <p>{this.state.term}</p> */}
             </div>
         ); 
     }
