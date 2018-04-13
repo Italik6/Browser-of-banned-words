@@ -20,7 +20,7 @@ class App extends Component {
         fetch('https://m.dickssportinggoods.com/wcsstore/DicksSportingGoods//javascript/Common/bannedWords.json')
         .then(response => response.json())
         .then((json) => {
-            this.setState({ words: json });
+            this.setState({ words: json.bannedWords });
         });
     };
 
@@ -39,8 +39,13 @@ class App extends Component {
         return (
             <div>
                 <SearchBar onSearchTermChange={videoSearch} />
-                <VideoDetail video={this.state.selectedVideo} />
-                <WordList />
+                {/* <VideoDetail video={this.state.selectedVideo} /> */}
+                <h1>Movie List</h1>
+             <ul>
+                {this.state.words.map(word => {
+                    return <li>{word}</li>
+                })}
+            </ul>
             </div>
         );
     }
