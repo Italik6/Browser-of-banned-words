@@ -7,20 +7,6 @@
     width: 100%;
 }
 
-.video-item img {
-    max-width: 64px;
-}
-
-.video-detail .details {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #D36A48;
-}
-
-.video-list .media-heading {
-    margin-top: 10px;
-}
-
 .loading {
     color: #fff;
     margin-left: 15px;
@@ -31,7 +17,6 @@
 }
 
 .list-group-item {
-    cursor: pointer;
     background-color: #7C7C7C;
 }
 
