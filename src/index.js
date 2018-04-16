@@ -31,7 +31,7 @@ class App extends Component {
             this.setState({ correctDialog: false, alertDialog: false });
         } else {
             this.setState({ correctDialog: true, alertDialog: false });
-        }
+        };
     }
 
     showList () {
@@ -47,13 +47,15 @@ class App extends Component {
 
         return (
             <div>
-                <SearchBar onSearchTermChange={wordSearch} alert={this.state.alertDialog} alertCorrect={this.state.correctDialog}/>
-                <button type="button" 
-                    className="btn btn-default m-b-20"
-                    onClick={this.showList}>
-                        {this.state.buttonLabel}
-                </button> 
-                {this.state.visibilityList ? <WordList words={this.state.words} /> : null}
+                <SearchBar onSearchTermChange={wordSearch} alert={this.state.alertDialog} alertCorrect={this.state.correctDialog} />
+                <div className="row">
+                    <button type="button" 
+                        className="btn btn-default m-b-20"
+                        onClick={this.showList}>
+                            {this.state.buttonLabel}
+                    </button> 
+                    {this.state.visibilityList ? <WordList words={this.state.words} /> : null}
+                </div>
             </div>
         );
     }

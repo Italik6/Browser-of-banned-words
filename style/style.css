@@ -19,3 +19,21 @@
 .m-b-20 {
     margin-bottom: 20px !important;
 }
+/* Dialogues animation */
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 200ms ease-out;
+}
+
+.fade-leave {
+    opacity: 1;
+}
+
+.fade-leave-active {
+    opacity: 0;
+    transition: opacity 200ms ease-out;
+}

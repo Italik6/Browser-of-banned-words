@@ -4,7 +4,6 @@ import keyIndex from 'react-key-index';
 
 const WordList = (props) => {
     const wordsWithID = keyIndex(props.words, 1);
-
     const wordItems = wordsWithID.map((word) => {
         return (
             <WordListItem 
