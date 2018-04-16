@@ -19,9 +19,8 @@ class SearchBar extends Component {
                     value={this.state.term}
                     onChange={e => this.onInputChange(e.target.value)}
                 />
-               {this.props.alert ? <div className="alert alert-danger" role="alert">Oh snap! Change a "{this.state.term}" word because you will be banned.</div> : null}
-               {/* <div className="alert alert-success" role="alert">All right! You can use "{this.state.term}" word freely.</div>} */}
-               {this.props.alertCorrect ? <div className="alert alert-success" role="alert">All right! You can use "{this.state.term}" word freely.</div> : null}
+               {this.props.alert ? <div className="alert alert-danger" role="alert">Oh snap! Change your word (<b>{this.state.term}</b>) because you will be banned.</div> : null}
+               {this.props.alertCorrect ? <div className="alert alert-success" role="alert">All right! You can use your word (<b>{this.state.term}</b>) freely.</div> : null}
             </div>
         ); 
     }

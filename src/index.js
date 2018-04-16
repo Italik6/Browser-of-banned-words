@@ -49,7 +49,7 @@ class App extends Component {
             <div>
                 <SearchBar onSearchTermChange={wordSearch} alert={this.state.alertDialog} alertCorrect={this.state.correctDialog}/>
                 <button type="button" 
-                    className="btn btn-default"
+                    className="btn btn-default m-b-20"
                     onClick={this.showList}>
                         {this.state.buttonLabel}
                 </button> 
