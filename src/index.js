@@ -9,7 +9,8 @@ class App extends Component {
         this.state = { 
             words: [],
             visibilityList: false,
-            buttonLabel: 'Show full list'
+            buttonLabel: 'Show full list',
+            alertDialog: false
         };
         this.showList = this.showList.bind(this);
     }
@@ -24,7 +25,7 @@ class App extends Component {
 
     wordSearch (term) {      
         if(_.includes(this.state.words, term)) {
-            alert(term);
+            this.setState({ alertDialog: true });
         }
     }
 
@@ -41,7 +42,7 @@ class App extends Component {
 
         return (
             <div>
-                <SearchBar onSearchTermChange={wordSearch}/>
+                <SearchBar onSearchTermChange={wordSearch} alert={this.state.alertDialog}/>
                 <button type="button" 
                     className="btn btn-default"
                     onClick={this.showList}>
