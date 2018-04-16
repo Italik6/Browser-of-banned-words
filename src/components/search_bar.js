@@ -21,10 +21,10 @@ class SearchBar extends Component {
                     onChange={e => this.onInputChange(e.target.value)}
                 />
                <ReactCSSTransitionGroup transitionName="fade" transitionEnterTimeout={300} transitionLeaveTimeout={200}>
-                    {this.props.alert ? <div className="alert alert-danger col-md-6" role="alert">Oh snap! Change your word (<b>{this.state.term}</b>) because you will be banned.</div> : null}
+                    {this.props.alert ? <div className="alert alert-danger col-xs-6" role="alert">Oh snap! Change your word (<b>{this.state.term}</b>) because you will be banned.</div> : null}
                </ ReactCSSTransitionGroup>
                <ReactCSSTransitionGroup transitionName="fade" transitionEnterTimeout={300} transitionLeaveTimeout={200}>
-                    {this.props.alertCorrect ? <div className="alert alert-success col-md-offset-6" role="alert">All right! You can use your word (<b>{this.state.term}</b>) freely.</div> : null}
+                    {this.props.alertCorrect ? <div className="alert alert-success col-xs-offset-6" role="alert">All right! You can use your word (<b>{this.state.term}</b>) freely.</div> : null}
                </ ReactCSSTransitionGroup>
             </div>
         ); 
