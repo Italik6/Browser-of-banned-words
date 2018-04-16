@@ -10,7 +10,8 @@ class App extends Component {
             words: [],
             visibilityList: false,
             buttonLabel: 'Show full list',
-            alertDialog: false
+            alertDialog: false,
+            correctDialog: false
         };
         this.showList = this.showList.bind(this);
     }
@@ -25,7 +26,11 @@ class App extends Component {
 
     wordSearch (term) {      
         if(_.includes(this.state.words, term)) {
-            this.setState({ alertDialog: true });
+            this.setState({ alertDialog: true, correctDialog: false });
+        } else if (term === "") {
+            this.setState({ correctDialog: false, alertDialog: false });
+        } else {
+            this.setState({ correctDialog: true, alertDialog: false });
         }
     }
 
@@ -42,7 +47,7 @@ class App extends Component {
 
         return (
             <div>
-                <SearchBar onSearchTermChange={wordSearch} alert={this.state.alertDialog}/>
+                <SearchBar onSearchTermChange={wordSearch} alert={this.state.alertDialog} alertCorrect={this.state.correctDialog}/>
                 <button type="button" 
                     className="btn btn-default"
                     onClick={this.showList}>
